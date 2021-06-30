@@ -7,7 +7,7 @@ const resetBtn = document.getElementById('reset-btn');
 // initialize state
 
 let numberGuess = Math.floor(Math.random() * 20);
-console.log(numberGuess);
+//console.log(numberGuess);
 
   
 
