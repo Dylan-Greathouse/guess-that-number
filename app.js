@@ -8,20 +8,24 @@ const btnCheck = document.getElementById('btn-check');
 let numberGuess = Math.floor(Math.random() * 20);
 console.log(numberGuess);
 
-var guess = 4;
+let guess = 4;
 
 
 
 // set event listeners 
 btnCheck.addEventListener('click', () => {
+    if (guess === 1) {
+        btnCheck.disabled = true;
+        return feedback.textContent = `Button has been disabled. Try again another time.`;
+    }
     if (Number(inputId.value) === numberGuess) {
-        return feedback.textContent = `You did it! Congrats!`;
+        return feedback.textContent = `You did it with ${guess} tries left, Congrats!`;
     } else if (Number(inputId.value) > numberGuess) {
-        guess++;
-        return feedback.textContent = `Sorry that was wrong... try a smaller number.`;
+        guess--;
+        return feedback.textContent = `Sorry that was wrong... try a smaller number. ${guess} tries.`;
     } else {
-        guess++;
-        return feedback.textContent = `Sorry that was wrong... try a higher number.`;
+        guess--;
+        return feedback.textContent = `Sorry that was wrong... try a higher number. ${guess} tries.`;
     }
 });
 
