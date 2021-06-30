@@ -43,6 +43,13 @@ section {
     margin-top: var(--gutter);
     margin-bottom: var(--gutter);
     border: solid 2px var(--color1);
+    z-index: 1;
+    
+}
+#background {
+    z-index: -1;
+    height: 300px;
+    max-height: 300px;
 }
 
 header {
@@ -64,6 +71,10 @@ footer {
 h2 {
     font-size: 1.8rem;
     font-weight: bold;
+}
+
+p {
+    text-align: center;
 }
 
 .gutter-right {
