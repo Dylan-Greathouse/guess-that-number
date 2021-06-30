@@ -1,8 +1,30 @@
 // import functions and grab DOM elements
 
+const feedback = document.getElementById('feedback');
+const inputId = document.getElementById('input-id');
+const btnCheck = document.getElementById('btn-check');
+
 // initialize state
+let numberGuess = Math.floor(Math.random() * 20);
+console.log(numberGuess);
+
+var guess = 4;
+
+
 
 // set event listeners 
+btnCheck.addEventListener('click', () => {
+    if (Number(inputId.value) === numberGuess) {
+        return feedback.textContent = `You did it! Congrats!`;
+    } else if (Number(inputId.value) > numberGuess) {
+        guess++;
+        return feedback.textContent = `Sorry that was wrong... try a smaller number.`;
+    } else {
+        guess++;
+        return feedback.textContent = `Sorry that was wrong... try a higher number.`;
+    }
+});
+
   // get user input
   // use user input to update state 
   // update DOM to reflect the new state
