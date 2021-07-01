@@ -27,10 +27,10 @@ btnCheck.addEventListener('click', () => {
         return feedback.textContent = `You did it with ${guess} tries left, Congrats!`;
     } else if (Number(inputId.value) > numberGuess) {
         guess--;
-        return feedback.textContent = `Sorry that was wrong... try a smaller number. ${guess} tries.`;
+        feedback.textContent = `Sorry that was wrong... try a smaller number. ${guess} tries.`;
     } else {
         guess--;
-        return feedback.textContent = `Sorry that was wrong... try a higher number. ${guess} tries.`;
+        feedback.textContent = `Sorry that was wrong... try a higher number. ${guess} tries.`;
     }
 });
 
