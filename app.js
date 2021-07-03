@@ -6,8 +6,8 @@ const btnCheck = document.getElementById('btn-check');
 const resetBtn = document.getElementById('reset-btn');
 // initialize state
 
-let numberGuess = Math.floor(Math.random() * 20);
-//console.log(numberGuess);
+let numberGuess = Math.ceil(Math.random() * 20);
+console.log(numberGuess);
 
   
 
@@ -35,8 +35,10 @@ btnCheck.addEventListener('click', () => {
 });
 
 resetBtn.addEventListener('click', () =>{
-    location.reload();
-    
+    guess = 4;
+    inputId.value = '';
+    btnCheck.disabled = false;
+    feedback.textContent = `Pick a number between 1 - 20. ${guess} more tries`;
 });
 
   // get user input
